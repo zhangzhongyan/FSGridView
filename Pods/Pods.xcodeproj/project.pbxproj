@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A2C2060DEA96C0CD48812CBF402958F /* FSGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 792D2477D95673C992AEB749E1EA1788 /* FSGridViewCell.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		115ACCE253A886181B55773DDC70D6ED /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = EAF92EA5DAB2AB54404E280874D44A2A /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		1600E9D9787BB1A925272BAF8515B55B /* UILabel+FSAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 1589AB497EC309DB578B733071AEB978 /* UILabel+FSAttributedString.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		181B2691FF506F26F7F71F711C724B81 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5482A4F39E9CC06020F022D392FE240F /* MASConstraintMaker.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		20E2F8001CC8A41A0E1B50694BE7875D /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D7604AC89BE74F7FAA9A552BA7174039 /* NSArray+MASAdditions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		240B8D58E8D8D571EC5FC29BDCD1DE67 /* FSGridView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 238F706AEA4A574859B14789F68B51A5 /* FSGridView-dummy.m */; };
-		2E3F1278BD279A54895C903266F21D1B /* FSGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 167498E0E7371FAC132339EDEB345BF7 /* FSGridView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2E5F3B41BD51ACE4EE3B422BB67E51DF /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F09ADA8DE690BB604E315A2161538D /* MASViewAttribute.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		31064475EC704EC31BC3E2DE0DAFC72C /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 96383F70991947F2CFDF8AEC2CAE0AF9 /* MASViewConstraint.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		3430321D06CBCF49F5A7DF6A70D9BB91 /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 45142C7CD4DFCBAC9F027F117A913E91 /* Masonry-dummy.m */; };
@@ -21,6 +21,7 @@
 		44A3B1A5D2C513F8FD238E3B64E4C6CF /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 64025366FCC46894BB28C551BA1D2A2D /* NSLayoutConstraint+MASDebugAdditions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		46692A2E77157B00827182C8DC686F72 /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 31C8A56A2278FC440796C5184F2AACC8 /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		4CE091F886EC6324673EFE0AEBBEA0FE /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 30E0074C6744F6908C89C866DEBB07A8 /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		51B3A817309AC212B7B7B4F59C94BE7E /* FSGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 167498E0E7371FAC132339EDEB345BF7 /* FSGridView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		5310D6A03FB7E7DAFF74E6E0FAD3406C /* UILabel+FSAttributedString.h in Headers */ = {isa = PBXBuildFile; fileRef = 7424930750C1A461E27CD43A5E29F7F9 /* UILabel+FSAttributedString.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		57EF7B2916BC9F592BD8614042E2B9F9 /* FSAttributedStringPropertyModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C375799BF84E2F8E57C25780A455214 /* FSAttributedStringPropertyModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		59AFF692B01F130D2EDC11A0C99A952F /* FSGridView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EEE78E75EDC76F8A7B1A45275952A97 /* FSGridView.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -36,7 +37,6 @@
 		A3307B8FB6EE0A049DBAE3AA4D2C6DA0 /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E20AEBCBD0CD51A9E14B6B7432392B8 /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B20A0E5D8F9BCED1A82793C4BE9E7258 /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = A641D869A3FC8E75C590AE20FF53B908 /* Masonry.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B5B291199AC5A1EB12EC67D16B070104 /* Pods-Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D5BFEF1DDF3D2D328528F7A565F5177D /* Pods-Example-dummy.m */; };
-		B85CCDE5D9FB620D3E9A31FE3A263007 /* FSGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 792D2477D95673C992AEB749E1EA1788 /* FSGridViewCell.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C74D2E856ADC8139CD00DBD184061B23 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CDF5DE5DBDDC7514397B912549885FE /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		D485AA2FB408D61E4DD35BCFCC827D41 /* FSAttributedStringModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 6120D4CD17B0BBB6DC5DFDF5EDEC821F /* FSAttributedStringModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		D783A8A5A426DBF85162B92142651218 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B99C7193EA1DE9C780943D9E4D0BF0 /* MASConstraint.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -546,8 +546,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				240B8D58E8D8D571EC5FC29BDCD1DE67 /* FSGridView-dummy.m in Sources */,
-				2E3F1278BD279A54895C903266F21D1B /* FSGridView.m in Sources */,
-				B85CCDE5D9FB620D3E9A31FE3A263007 /* FSGridViewCell.m in Sources */,
+				51B3A817309AC212B7B7B4F59C94BE7E /* FSGridView.m in Sources */,
+				0A2C2060DEA96C0CD48812CBF402958F /* FSGridViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,31 +600,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		3C369E8F04D09611B58340C5548D70F1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8FC6F52A09F485EEF04D907B487F2771 /* FSGridView.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/FSGridView/FSGridView-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = FSGridView;
-				PRODUCT_NAME = FSGridView;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -713,6 +688,30 @@
 			};
 			name = Release;
 		};
+		6870150C7268766BE90C2C4A3FB1ACD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FC6F52A09F485EEF04D907B487F2771 /* FSGridView.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/FSGridView/FSGridView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = FSGridView;
+				PRODUCT_NAME = FSGridView;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		7EF7227D9B20A1D549000096ACCB23D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -777,30 +776,6 @@
 			};
 			name = Debug;
 		};
-		815CB32C245D476442DE828EF58ECE8F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 734FE0C939DB3E97E2998BBC0E448EF5 /* FSGridView.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/FSGridView/FSGridView-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = FSGridView;
-				PRODUCT_NAME = FSGridView;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 		8AEEA5CC30001CB70A788717A32DBAB7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AF28D6219BBFDA5AF673BC3B68F0190C /* Masonry.release.xcconfig */;
@@ -824,6 +799,29 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
+		};
+		96A1C64777B54BE39591814257045B27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 734FE0C939DB3E97E2998BBC0E448EF5 /* FSGridView.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/FSGridView/FSGridView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = FSGridView;
+				PRODUCT_NAME = FSGridView;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
 		};
 		AD1B37EAFAB5C8DE2F86CCAB7E97E8C0 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -926,8 +924,8 @@
 		503C8A94B83A6D30B0D24CDF13F658E1 /* Build configuration list for PBXNativeTarget "FSGridView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				815CB32C245D476442DE828EF58ECE8F /* Debug */,
-				3C369E8F04D09611B58340C5548D70F1 /* Release */,
+				96A1C64777B54BE39591814257045B27 /* Debug */,
+				6870150C7268766BE90C2C4A3FB1ACD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

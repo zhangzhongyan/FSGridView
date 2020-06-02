@@ -11,6 +11,8 @@
 #import <FSGridView/FSGridView.h>
 #import "FSStockMetaDataCell.h"
 #import "FSStockTextCell.h"
+//Helper
+#import <Masonry.h>
 
 @interface FSStockDemoVC ()<FSGridViewDataSource, FSGridViewDelegate>
 
@@ -42,7 +44,10 @@
 
 - (void)setupConstraints
 {
-    self.gridView.frame = CGRectMake(0.0f, 100, self.view.frame.size.width, self.view.frame.size.height - 100);
+    [self.gridView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.equalTo(self.view);
+        make.top.equalTo(@(100.0f));
+    }];
 }
 
 - (void)setupData
@@ -546,7 +551,7 @@
 - (FSGridView *)gridView {
     if (!_gridView) {
         _gridView = [[FSGridView alloc] init];
-        _gridView.backgroundColor = UIColor.clearColor;
+        _gridView.backgroundColor = UIColor.whiteColor;
         [_gridView registerClass:FSStockMetaDataCell.class forCellWithReuseIdentifier:NSStringFromClass(FSStockMetaDataCell.class)];
         [_gridView registerClass:FSStockTextCell.class forCellWithReuseIdentifier:NSStringFromClass(FSStockTextCell.class)];
         _gridView.dataSource = self;

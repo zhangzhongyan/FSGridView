@@ -1,6 +1,6 @@
 PODS:
   - FSAttributedString (1.0.0)
-  - FSGridView (1.0.0)
+  - FSGridView (1.0.1)
   - Masonry (1.1.0)
 
 DEPENDENCIES:
@@ -19,7 +19,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FSAttributedString: 5843c92c93e7b99e060e9b71f677b15fefa8824d
-  FSGridView: bd84c8a91f9beed885e1e5de00803ac086b81906
+  FSGridView: 05a3b0f1371cef7962fc848d85d1b271362a643b
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
 PODFILE CHECKSUM: b9bef28d18965ca401881cd804af896f1da93afa

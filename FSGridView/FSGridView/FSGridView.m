@@ -29,14 +29,14 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setupInitData];
+        [self setupSubviews];
     }
     return self;
 }
 
 #pragma mark - Private Methods
 
-- (void)setupInitData
+- (void)setupSubviews
 {
     [self addSubview:self.tableView];
 }
@@ -162,23 +162,33 @@
     
     self.cellLastOffset = sender.rightCollectionView.contentOffset;
     
-//    - (void)linkAgeScrollView:(UIScrollView*)sender{
-//        NSArray* visibleCells = [self.stockTableView visibleCells];
-//        for (JJStockViewCell* cell in visibleCells) {
-//            if (cell.rightContentScrollView != sender) {
-//                cell.rightContentScrollView.delegate = nil;//disable send scrollViewDidScroll message
-//                [cell.rightContentScrollView setContentOffset:CGPointMake(sender.contentOffset.x, 0) animated:NO];
-//                cell.rightContentScrollView.delegate = self;//enable send scrollViewDidScroll message
-//            }
-//        }
-//        if (sender != self.headScrollView) {
-            
-//        }
-//
-//
-//        _lastScrollX = sender.contentOffset.x;
-//    }
+    if (self.gridViewDidScrollBlock) {
+        self.gridViewDidScrollBlock(self);
+    }
     
+    if (self.delegate && [self.delegate respondsToSelector:@selector(gridViewDidScroll:)]) {
+        [self.delegate gridViewDidScroll:self];
+    }
+}
+
+- (void)gridViewCell:(FSGridViewCell *)cell didEndDecelerating:(UIScrollView *)scrollView
+{
+    if (self.gridViewDidEndDeceleratingBlock) {
+        self.gridViewDidEndDeceleratingBlock(self);
+    }
+    if (self.delegate && [self.delegate respondsToSelector:@selector(gridViewDidEndDecelerating:)]) {
+        [self.delegate gridViewDidEndDecelerating:self];
+    }
+}
+
+- (void)gridViewCell:(FSGridViewCell *)cell scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelera
+{
+    if (self.gridViewDidEndDraggingBlock) {
+        self.gridViewDidEndDraggingBlock(self, decelera);
+    }
+    if (self.delegate && [self.delegate respondsToSelector:@selector(gridViewDidEndDragging:willDecelerate:)]) {
+        [self.delegate gridViewDidEndDragging:self willDecelerate:decelera];
+    }
 }
 
 #pragma mark - <UITableViewDataSource>
@@ -277,6 +287,11 @@
         _sectionHeaderView = cell;
     }
     return _sectionHeaderView;
+}
+
+- (CGPoint)contentOffset
+{
+    return self.cellLastOffset;
 }
 
 @end

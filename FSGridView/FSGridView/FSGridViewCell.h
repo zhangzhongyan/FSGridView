@@ -36,6 +36,17 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param scrollView 滚动视图
 - (void)gridViewCell:(FSGridViewCell *)cell didScroll:(UIScrollView *)scrollView;
 
+/// 滚动回调
+/// @param cell cell视图
+/// @param scrollView 滚动视图
+- (void)gridViewCell:(FSGridViewCell *)cell didEndDecelerating:(UIScrollView *)scrollView;
+
+/// 滚动回调
+/// @param cell cell视图
+/// @param scrollView 滚动视图
+/// @param decelera 是否将要减速
+- (void)gridViewCell:(FSGridViewCell *)cell scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelera;
+
 @end
 
 /// 网格Cell

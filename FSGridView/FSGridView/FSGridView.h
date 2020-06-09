@@ -51,6 +51,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol FSGridViewDelegate <NSObject>
 
+@optional
+
 /// 点击对应的视图
 /// @param gridView 网格视图
 /// @param row 对应的行
@@ -62,19 +64,44 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param column 对应的列
 - (void)gridView:(FSGridView *)gridView didSelctedHeaderWithColumn:(NSInteger)column;
 
+/// 滚动回调（任意滚动）
+/// @param gridView 网格视图
+- (void)gridViewDidScroll:(FSGridView *)gridView;
+
+/// 滚动回调（结束滚动）
+/// @param gridView 网格视图
+- (void)gridViewDidEndDecelerating:(FSGridView *)gridView;
+
+/// 滚动回调（将要结束滚动）
+/// @param gridView 网格视图
+/// @param decelera 减速标识
+- (void)gridViewDidEndDragging:(FSGridView *)gridView willDecelerate:(BOOL)decelera;
+
 @end
 
 /// 网格视图
 @interface FSGridView : UIView
+
+/// 尽量不要操作TableView
+@property (nonatomic, strong, readonly) UITableView *tableView;
+
+/// 滚动回调Block（用于一些定制需求）
+@property (nonatomic, copy, nullable) void (^gridViewDidScrollBlock) (FSGridView *gridView);
+
+/// 滚动回调Block（用于一些定制需求）
+@property (nonatomic, copy, nullable) void (^gridViewDidEndDeceleratingBlock) (FSGridView *gridView);
+
+/// 滚动回调Block（用于一些定制需求）
+@property (nonatomic, copy, nullable) void (^gridViewDidEndDraggingBlock) (FSGridView *gridView, BOOL WillDecelerate);
+
+/// 右边内容滚动偏移值
+@property (nonatomic, assign, readonly) CGPoint contentOffset;
 
 /// 数据源
 @property (nonatomic, weak) id<FSGridViewDataSource> dataSource;
 
 /// 委托
 @property (nonatomic, weak) id<FSGridViewDelegate> delegate;
-
-/// 尽量不要操作TableView
-@property (nonatomic, strong, readonly) UITableView *tableView;
 
 /// 注册cell用于重用
 /// @param cellClass cell类

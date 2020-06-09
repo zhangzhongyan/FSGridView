@@ -82,6 +82,20 @@
     }
 }
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    if (self.dataSource && [self.dataSource respondsToSelector:@selector(gridViewCell:didEndDecelerating:)]) {
+        [self.dataSource gridViewCell:self didEndDecelerating:scrollView];
+    }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (self.dataSource && [self.dataSource respondsToSelector:@selector(gridViewCell:scrollViewDidEndDragging:willDecelerate:)]) {
+        [self.dataSource gridViewCell:self scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
+    }
+}
+
 #pragma mark - <UICollectionViewDataSource>
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section

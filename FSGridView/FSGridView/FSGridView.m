@@ -29,19 +29,19 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setupSubviews];
+        [self fs_setupSubviews];
     }
     return self;
 }
 
 #pragma mark - Private Methods
 
-- (void)setupSubviews
+- (void)fs_setupSubviews
 {
     [self addSubview:self.tableView];
 }
 
-- (void)scrollToLastScrollX {
+- (void)fs_scrollToLastScrollX {
     NSArray *cells = [self.tableView visibleCells];
     for (FSGridViewCell *cell in cells) {
         cell.rightCollectionView.delegate = nil;
@@ -76,6 +76,14 @@
     }
 }
 
+/// 刷新（包括表头+表）
+- (void)reloadData
+{
+    [self.sectionHeaderView.leftCollectionView reloadData];
+    [self.sectionHeaderView.rightCollectionView reloadData];
+    [self.tableView reloadData];
+}
+
 #pragma mark - Overwrite Methods
 
 - (void)layoutSubviews
@@ -88,7 +96,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    [self scrollToLastScrollX];
+    [self fs_scrollToLastScrollX];
 }
 
 #pragma mark - <FSGridViewCellDataSource>
@@ -292,6 +300,13 @@
 - (CGPoint)contentOffset
 {
     return self.cellLastOffset;
+}
+
+- (CGSize)contentSize
+{
+    CGFloat height = self.tableView.contentSize.height;
+    CGFloat width = self.sectionHeaderView.leftCollectionView.contentSize.width + self.sectionHeaderView.rightCollectionView.contentSize.width;
+    return CGSizeMake(width, height);
 }
 
 @end

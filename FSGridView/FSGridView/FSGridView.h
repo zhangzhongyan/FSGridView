@@ -97,6 +97,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 右边内容滚动偏移值
 @property (nonatomic, assign, readonly) CGPoint contentOffset;
 
+/// 内容大小
+@property (nonatomic, assign, readonly) CGSize contentSize;
+
 /// 数据源
 @property (nonatomic, weak) id<FSGridViewDataSource> dataSource;
 
@@ -113,6 +116,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param column 列
 /// @param girdCell 网格对应的行Cell
 - (UICollectionViewCell *)dequeueReusableCellWithReuseIdentifier:(NSString *)identifier column:(NSInteger)column inGridCell:(FSGridViewCell *)girdCell;
+
+/// 刷新（包括表头+表）
+- (void)reloadData;
 
 @end
 

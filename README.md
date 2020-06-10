@@ -10,6 +10,7 @@ iOS网格视图，主要用于类似股票、课程表、属性表。 使用Coll
 |  版本   | 修改内容  |
 |  ----  | ----  |
 | v1.0.1  | 增加滚动阴影、右侧指示视图 |
+| v1.0.2  | 增加ReloadData、增加ContentSize（用于滚动处理）、私有方法保护 |
 
 
 请查看workspace工中的**Example**示例项目。 下载后，您将需要运行pod install。
@@ -71,44 +72,16 @@ iOS网格视图，主要用于类似股票、课程表、属性表。 使用Coll
 
 #pragma mark - property
 
-- (FSGridView *)gridView {
+- (FSStockGridView *)gridView {
     if (!_gridView) {
-        _gridView = [[FSGridView alloc] init];
+        _gridView = [[FSStockGridView alloc] init];
         _gridView.backgroundColor = UIColor.whiteColor;
         [_gridView registerClass:FSStockMetaDataCell.class forCellWithReuseIdentifier:NSStringFromClass(FSStockMetaDataCell.class)];
         [_gridView registerClass:FSStockTextCell.class forCellWithReuseIdentifier:NSStringFromClass(FSStockTextCell.class)];
         _gridView.dataSource = self;
         _gridView.delegate = self;
-                
-        //滚动阴影
-        __weak typeof(self) weakSelf = self;
-        _gridView.gridViewDidScrollBlock = ^(FSGridView * _Nonnull gridView) {
-            weakSelf.leftSideFadeView.hidden = (gridView.contentOffset.x <= 0.0f);
-        };
     }
     return _gridView;
-}
-
-
-- (UIView *)leftSideFadeView
-{
-    if (!_leftSideFadeView) {
-        UIImage *image = [FSStockDemoVC colorWithGradientwithSize:CGSizeMake(10.0f, 10.0f) andColors:@[[UIColor colorWithWhite:0.0f alpha:0.3f], [UIColor colorWithWhite:0.0f alpha:0.0f]]];
-        _leftSideFadeView = [[UIView alloc] init];
-        _leftSideFadeView.layer.contents = (id) image.CGImage;
-        _leftSideFadeView.hidden = YES;
-    }
-    return _leftSideFadeView;
-}
-
-- (UIView *)rightSideIndicatorView
-{
-    if (!_rightSideIndicatorView) {
-        UIImage *image = [FSStockDemoVC triangleImage];
-        _rightSideIndicatorView = [[UIView alloc] init];
-        _rightSideIndicatorView.layer.contents = (id) image.CGImage;
-    }
-    return _rightSideIndicatorView;
 }
 
 ```
@@ -243,7 +216,7 @@ iOS网格视图，主要用于类似股票、课程表、属性表。 使用Coll
 
 2.包含FSGridView, 提供gridViewDidScrollBlock、gridViewDidEndDeceleratingBlock、gridViewDidEndDraggingBlock的属性
 
-3.Demo工程一样直接使用
+3.Demo工程中**FSStockGridView**直接使用
 
 
 

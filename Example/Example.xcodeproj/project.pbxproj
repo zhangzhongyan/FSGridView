@@ -21,6 +21,7 @@
 		E105D4EE24811C1D0056E95B /* FSRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E105D4ED24811C1D0056E95B /* FSRootVC.m */; };
 		E105D4FB24811FB20056E95B /* FSRightCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E105D4F824811FB20056E95B /* FSRightCollectionViewCell.m */; };
 		E105D4FC24811FB20056E95B /* FSLeftTitleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E105D4FA24811FB20056E95B /* FSLeftTitleCollectionViewCell.m */; };
+		E13842FE2490E89B0047B68D /* FSStockGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = E13842FD2490E89B0047B68D /* FSStockGridView.m */; };
 		E15BD8302483EE0800160556 /* FSStockCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E15BD82F2483EE0800160556 /* FSStockCellViewModel.m */; };
 		E17EA2682482425C003BE2D3 /* FSStockMetaDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E17EA2672482425C003BE2D3 /* FSStockMetaDataCell.m */; };
 		E17EA26B24824278003BE2D3 /* FSStockTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E17EA26A24824278003BE2D3 /* FSStockTextCell.m */; };
@@ -65,6 +66,8 @@
 		E105D4F824811FB20056E95B /* FSRightCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSRightCollectionViewCell.m; sourceTree = "<group>"; };
 		E105D4F924811FB20056E95B /* FSRightCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSRightCollectionViewCell.h; sourceTree = "<group>"; };
 		E105D4FA24811FB20056E95B /* FSLeftTitleCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSLeftTitleCollectionViewCell.m; sourceTree = "<group>"; };
+		E13842FC2490E89B0047B68D /* FSStockGridView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSStockGridView.h; sourceTree = "<group>"; };
+		E13842FD2490E89B0047B68D /* FSStockGridView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSStockGridView.m; sourceTree = "<group>"; };
 		E15BD82E2483EE0800160556 /* FSStockCellViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSStockCellViewModel.h; sourceTree = "<group>"; };
 		E15BD82F2483EE0800160556 /* FSStockCellViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSStockCellViewModel.m; sourceTree = "<group>"; };
 		E17EA2662482425C003BE2D3 /* FSStockMetaDataCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSStockMetaDataCell.h; sourceTree = "<group>"; };
@@ -229,6 +232,8 @@
 		E105D4FE24811FBC0056E95B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E13842FC2490E89B0047B68D /* FSStockGridView.h */,
+				E13842FD2490E89B0047B68D /* FSStockGridView.m */,
 				E17EA2662482425C003BE2D3 /* FSStockMetaDataCell.h */,
 				E17EA2672482425C003BE2D3 /* FSStockMetaDataCell.m */,
 				E17EA26924824278003BE2D3 /* FSStockTextCell.h */,
@@ -364,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E105D4E5248118A40056E95B /* FSStockModel.m in Sources */,
+				E13842FE2490E89B0047B68D /* FSStockGridView.m in Sources */,
 				E105D4BC248115010056E95B /* ViewController.m in Sources */,
 				E105D4FC24811FB20056E95B /* FSLeftTitleCollectionViewCell.m in Sources */,
 				E105D4B6248115010056E95B /* AppDelegate.m in Sources */,
@@ -538,7 +544,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhangzhongyan.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -557,7 +563,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhangzhongyan.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

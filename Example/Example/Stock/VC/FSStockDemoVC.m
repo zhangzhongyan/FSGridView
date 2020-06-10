@@ -8,7 +8,7 @@
 
 #import "FSStockDemoVC.h"
 //View
-#import <FSGridView/FSGridView.h>
+#import "FSStockGridView.h"
 #import "FSStockMetaDataCell.h"
 #import "FSStockTextCell.h"
 //Helper
@@ -16,7 +16,7 @@
 
 @interface FSStockDemoVC ()<FSGridViewDataSource, FSGridViewDelegate>
 
-@property (nonatomic, strong) FSGridView *gridView;
+@property (nonatomic, strong) FSStockGridView *gridView;
 
 @property (nonatomic, strong) UIView *leftSideFadeView;
 
@@ -450,60 +450,6 @@
     [self.stockViewModels addObject:vm29];
 }
 
-
-+ (UIImage *)colorWithGradientwithSize:(CGSize)size andColors:(NSArray *)colors {
-    
-    //Create our background gradient layer
-    CAGradientLayer *backgroundGradientLayer = [CAGradientLayer layer];
-    
-    //Set the frame to our object's bounds
-    backgroundGradientLayer.frame = CGRectMake(0.0f, 0.0f, size.width, size.height);
-    
-    //To simplfy formatting, we'll iterate through our colors array and create a mutable array with their CG counterparts
-    NSMutableArray *cgColors = [[NSMutableArray alloc] init];
-    for (UIColor *color in colors) {
-        [cgColors addObject:(id)[color CGColor]];
-    }
-    
-    backgroundGradientLayer.colors = cgColors;
-    
-    //Specify the direction our gradient will take
-    [backgroundGradientLayer setStartPoint:CGPointMake(0.0, 0.5)];
-    [backgroundGradientLayer setEndPoint:CGPointMake(1.0, 0.5)];
-    
-    //Convert our CALayer to a UIImage object
-    UIGraphicsBeginImageContext(backgroundGradientLayer.bounds.size);
-    [backgroundGradientLayer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *backgroundColorImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return backgroundColorImage;
-}
-
-+ (UIImage *)triangleImage {
-    
-    CGSize size = CGSizeMake(20.0f, 20.0f);
-    //Convert our CALayer to a UIImage object
-    
-    
-    UIColor *color = [UIColor colorWithRed:102/255.0f green:105/255.0f blue:124/255.0f alpha:1];
-    
-    UIGraphicsBeginImageContext(size);
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(ctx, color.CGColor);
-    
-    CGContextMoveToPoint(ctx, 5, 20);
-    CGContextAddLineToPoint(ctx, 15, 10);
-    CGContextAddLineToPoint(ctx, 5, 0);
-    CGContextAddLineToPoint(ctx, 5, 20);
-    CGContextFillPath(ctx);
-    UIImage *backgroundColorImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return backgroundColorImage;
-}
-
-
 #pragma mark - <FSGridViewDataSource>
 
 /// 多少列
@@ -626,46 +572,17 @@
 
 #pragma mark - property
 
-- (FSGridView *)gridView {
+- (FSStockGridView *)gridView {
     if (!_gridView) {
-        _gridView = [[FSGridView alloc] init];
+        _gridView = [[FSStockGridView alloc] init];
         _gridView.backgroundColor = UIColor.whiteColor;
         [_gridView registerClass:FSStockMetaDataCell.class forCellWithReuseIdentifier:NSStringFromClass(FSStockMetaDataCell.class)];
         [_gridView registerClass:FSStockTextCell.class forCellWithReuseIdentifier:NSStringFromClass(FSStockTextCell.class)];
         _gridView.dataSource = self;
         _gridView.delegate = self;
-                
-        //滚动阴影
-        __weak typeof(self) weakSelf = self;
-        _gridView.gridViewDidScrollBlock = ^(FSGridView * _Nonnull gridView) {
-            weakSelf.leftSideFadeView.hidden = (gridView.contentOffset.x <= 0.0f);
-        };
     }
     return _gridView;
 }
-
-
-- (UIView *)leftSideFadeView
-{
-    if (!_leftSideFadeView) {
-        UIImage *image = [FSStockDemoVC colorWithGradientwithSize:CGSizeMake(10.0f, 10.0f) andColors:@[[UIColor colorWithWhite:0.0f alpha:0.3f], [UIColor colorWithWhite:0.0f alpha:0.0f]]];
-        _leftSideFadeView = [[UIView alloc] init];
-        _leftSideFadeView.layer.contents = (id) image.CGImage;
-        _leftSideFadeView.hidden = YES;
-    }
-    return _leftSideFadeView;
-}
-
-- (UIView *)rightSideIndicatorView
-{
-    if (!_rightSideIndicatorView) {
-        UIImage *image = [FSStockDemoVC triangleImage];
-        _rightSideIndicatorView = [[UIView alloc] init];
-        _rightSideIndicatorView.layer.contents = (id) image.CGImage;
-    }
-    return _rightSideIndicatorView;
-}
-
 
 - (NSMutableArray<FSStockCellViewModel *> *)stockViewModels {
     if (!_stockViewModels) {

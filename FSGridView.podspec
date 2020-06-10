@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "FSGridView"
-  spec.version      = "1.0.1"
+  spec.version      = "1.0.2"
   spec.summary      = "iOS网格视图，主要用于类似股票、课程表、属性表。"
 
   # This description is used to generate tags and improve search results.

@@ -79,6 +79,7 @@
 /// 刷新（包括表头+表）
 - (void)reloadData
 {
+    [self.sectionHeaderView setNeedsLayout];
     [self.sectionHeaderView.leftCollectionView reloadData];
     [self.sectionHeaderView.rightCollectionView reloadData];
     [self.tableView reloadData];

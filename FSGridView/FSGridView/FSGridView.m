@@ -226,6 +226,11 @@
         }
     }
     
+    //重用出来设置到上个位置
+    cell.rightCollectionView.delegate = nil;
+    [cell.rightCollectionView setContentOffset:self.cellLastOffset animated:NO];
+    cell.rightCollectionView.delegate = cell;
+    
     //更新内容
     cell.gridRowIndex = indexPath.row;
     [cell.leftCollectionView reloadData];
@@ -256,6 +261,11 @@
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    //重用出来设置到上个位置
+    self.sectionHeaderView.rightCollectionView.delegate = nil;
+    [self.sectionHeaderView.rightCollectionView setContentOffset:self.cellLastOffset animated:NO];
+    self.sectionHeaderView.rightCollectionView.delegate = self.sectionHeaderView;
+    
     return self.sectionHeaderView;
 }
 

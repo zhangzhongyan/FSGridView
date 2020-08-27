@@ -70,8 +70,8 @@
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
         return [girdCell.leftCollectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     } else {
-        NSInteger section = column - 1;
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:section];
+        NSInteger row = column - 1;
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
         return [girdCell.rightCollectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     }
 }

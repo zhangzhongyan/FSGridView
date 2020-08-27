@@ -13,6 +13,7 @@ iOS网格视图，主要用于类似股票、课程表、属性表。 使用Coll
 | v1.0.2  | 增加ReloadData、增加ContentSize（用于滚动处理）、私有方法保护 |
 | v1.0.3  | 修复头部滚动问题 |
 | v1.0.4  | 处理重用后，滚动位置变更问题 |
+| v1.0.5  | collectionview重用indexPath越界问题 |
 
 
 

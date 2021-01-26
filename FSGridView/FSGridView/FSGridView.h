@@ -85,6 +85,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 尽量不要操作TableView
 @property (nonatomic, strong, readonly) UITableView *tableView;
 
+/// 尽量不要操作sectionHeaderView
+@property (nonatomic, strong, readonly) FSGridViewCell *sectionHeaderView;
+
 /// 滚动回调Block（用于一些定制需求）
 @property (nonatomic, copy, nullable) void (^gridViewDidScrollBlock) (FSGridView *gridView);
 
@@ -93,6 +96,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 滚动回调Block（用于一些定制需求）
 @property (nonatomic, copy, nullable) void (^gridViewDidEndDraggingBlock) (FSGridView *gridView, BOOL WillDecelerate);
+
+/// 配置FSGridViewCell回调Block（用于一些定制需求）
+@property (nonatomic, copy, nullable) void (^gridViewConfigureCellBlock) (FSGridView *gridView, FSGridViewCell *gridCell, BOOL isHeader, NSIndexPath * _Nullable indexPath);
 
 /// 右边内容滚动偏移值
 @property (nonatomic, assign, readonly) CGPoint contentOffset;

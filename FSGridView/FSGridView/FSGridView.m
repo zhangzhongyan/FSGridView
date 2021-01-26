@@ -236,6 +236,10 @@
     [cell.leftCollectionView reloadData];
     [cell.rightCollectionView reloadData];
     
+    if (self.gridViewConfigureCellBlock) {
+        self.gridViewConfigureCellBlock(self, cell, NO, indexPath);
+    }
+    
     return cell;
 }
 
@@ -265,6 +269,10 @@
     self.sectionHeaderView.rightCollectionView.delegate = nil;
     [self.sectionHeaderView.rightCollectionView setContentOffset:self.cellLastOffset animated:NO];
     self.sectionHeaderView.rightCollectionView.delegate = self.sectionHeaderView;
+    
+    if (self.gridViewConfigureCellBlock) {
+        self.gridViewConfigureCellBlock(self, self.sectionHeaderView, YES, nil);
+    }
     
     return self.sectionHeaderView;
 }

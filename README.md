@@ -16,6 +16,7 @@ iOS网格视图，主要用于类似股票、课程表、属性表。 使用Coll
 | v1.0.5  | collectionview重用indexPath越界问题 |
 | v1.0.6  | FSGridViewCell.contentView覆盖问题 |
 | v1.0.7  | 处理FSGridViewCell定制化需求 |
+| v1.0.8  | 处理FSGridViewCell.layoutSubViews处理滚动问题 |
 
 
 

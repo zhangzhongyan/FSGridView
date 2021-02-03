@@ -50,8 +50,12 @@
         leftWidth = [self.dataSource gridViewCell:self widthForColumn:0];
     }
     
+    //完善重新布局时，offset回调
+    id<FSGridViewCellDataSource> dataSource = self.dataSource;
+    self.dataSource = nil;
     self.leftCollectionView.frame = CGRectMake(0.0f, 0.0f, leftWidth, self.frame.size.height);
     self.rightCollectionView.frame = CGRectMake(leftWidth, 0.0f, self.frame.size.width - leftWidth, self.frame.size.height);
+    self.dataSource = dataSource;
 }
 
 #pragma mark - Private Methods

@@ -144,12 +144,12 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if (self.dataSource && [self.dataSource respondsToSelector:@selector(gridViewCell:didSelectItemAtColumn:)]) {
-        
+        UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
         if (collectionView == self.leftCollectionView) {
-            [self.dataSource gridViewCell:self didSelectItemAtColumn:0];
+            [self.dataSource gridViewCell:self collectionCell:cell didSelectItemAtColumn:0];
         } else {
             NSInteger column = indexPath.row;
-            [self.dataSource gridViewCell:self didSelectItemAtColumn:column + 1];
+            [self.dataSource gridViewCell:self collectionCell:cell didSelectItemAtColumn:column + 1];
         }
     }
 }

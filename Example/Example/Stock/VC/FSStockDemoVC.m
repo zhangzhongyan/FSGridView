@@ -551,17 +551,19 @@
 
 /// 点击对应的视图
 /// @param gridView 网格视图
+/// @param collectionCell 网格单元格
 /// @param row 对应的行
 /// @param column 对应的列
-- (void)gridView:(FSGridView *)gridView didSelctedAtRow:(NSInteger)row column:(NSInteger)column
+- (void)gridView:(FSGridView *)gridView collectionCell:(nullable UICollectionViewCell *)collectionCell didSelctedAtRow:(NSInteger)row column:(NSInteger)column
 {
     
 }
 
 /// 点击对应的视图（固定头部区域）
 /// @param gridView 网格视图
+/// @param collectionCell 网格单元格
 /// @param column 对应的列
-- (void)gridView:(FSGridView *)gridView didSelctedHeaderWithColumn:(NSInteger)column
+- (void)gridView:(FSGridView *)gridView collectionCell:(nullable UICollectionViewCell *)collectionCell didSelctedHeaderWithColumn:(NSInteger)column
 {
     
 }

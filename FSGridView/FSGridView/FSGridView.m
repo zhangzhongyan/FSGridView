@@ -137,15 +137,15 @@
     }
 }
 
-- (void)gridViewCell:(FSGridViewCell *)cell didSelectItemAtColumn:(NSInteger)column
+- (void)gridViewCell:(FSGridViewCell *)cell collectionCell:(nullable UICollectionViewCell *)collectionCell didSelectItemAtColumn:(NSInteger)column
 {
     if (cell == self.sectionHeaderView) {
         if (self.delegate && [self.delegate respondsToSelector:@selector(gridView:didSelctedHeaderWithColumn:)]) {
-            [self.delegate gridView:self didSelctedHeaderWithColumn:column];
+            [self.delegate gridView:self collectionCell:collectionCell didSelctedHeaderWithColumn:column];
         }
     } else {
         if (self.delegate && [self.delegate respondsToSelector:@selector(gridView:didSelctedAtRow:column:)]) {
-            [self.delegate gridView:self didSelctedAtRow:cell.gridRowIndex column:column];
+            [self.delegate gridView:self collectionCell:collectionCell didSelctedAtRow:cell.gridRowIndex column:column];
         }
     }
 }

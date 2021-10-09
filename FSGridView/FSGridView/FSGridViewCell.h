@@ -29,8 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 点击对应的单元
 /// @param cell 视图
 /// @param column 列位置
-- (void)gridViewCell:(FSGridViewCell *)cell didSelectItemAtColumn:(NSInteger)column;
-
+- (void)gridViewCell:(FSGridViewCell *)cell collectionCell:(nullable UICollectionViewCell *)collectionCell didSelectItemAtColumn:(NSInteger)column;
+ 
 /// 滚动回调
 /// @param cell cell视图
 /// @param scrollView 滚动视图

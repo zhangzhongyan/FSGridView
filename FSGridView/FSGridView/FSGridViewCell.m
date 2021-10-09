@@ -143,7 +143,7 @@
 #pragma mark - <UICollectionViewDelegate>
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (self.dataSource && [self.dataSource respondsToSelector:@selector(gridViewCell:didSelectItemAtColumn:)]) {
+    if (self.dataSource && [self.dataSource respondsToSelector:@selector(gridViewCell:collectionCell:didSelectItemAtColumn:)]) {
         UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
         if (collectionView == self.leftCollectionView) {
             [self.dataSource gridViewCell:self collectionCell:cell didSelectItemAtColumn:0];
